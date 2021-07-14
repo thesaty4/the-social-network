@@ -6,3 +6,4 @@ XAMPP SERVER - (IN THIS PHP,MYSQL ARE AVAILABLE)
 
 # MORE DETAILS ABOUT THIS PROJECT
 Project Report/Documentation Available in the Project.
+https://github.com/thesaty4/the-social-network/tree/main/Project%20Report
