@@ -20,4 +20,5 @@ For better experience, you can do register yourself @ https://dipankarsolution.t
 
 Get MORE DETAILS ABOUT THIS PROJECT
 Project Report/Documentation Available in the Project.
+
 https://github.com/thesaty4/the-social-network/tree/main/Project%20Report
