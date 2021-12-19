@@ -7,7 +7,7 @@ LIVE AT - https://tinyurl.com/4crj2699
 LIVE AT - https://dipankarsolution.tech/minifb/php/admin/main.php?users
 ![image](https://user-images.githubusercontent.com/57853305/146684192-3b1ba095-e8a5-4dc3-a6bc-898037f44ca8.png)
 
-# USESR CONTROL
+# USER CONTROL
 LIVE AT - https://dipankarsolution.tech/minifb/php/user/main.php
 ![image](https://user-images.githubusercontent.com/57853305/146684335-d58c00d7-aa17-421f-b5ad-44c45a1d61e8.png)
 
