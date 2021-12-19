@@ -1,7 +1,7 @@
 # THE SOCIAL NETWORK
 That is best social media I made. You can do whatever you do in the Facebook, Instagram and other social media's.
 
-# LIVE - https://tinyurl.com/kctvjrx8
+# LIVE - https://tinyurl.com/4crj2699
 
 # REQUIREMENT -
 XAMPP SERVER - (IN THIS PHP,MYSQL ARE AVAILABLE)
