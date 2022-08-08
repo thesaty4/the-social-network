@@ -1,7 +1,7 @@
 # THE SOCIAL NETWORK (Facebook Clone)
 Here, You can do whatever you do in the Facebook, Instagram and other social media's.
 
-LIVE AT - https://tinyurl.com/4crj2699
+LIVE AT - https://my-network24.000webhostapp.com/
 ![image](https://user-images.githubusercontent.com/57853305/146684118-3e1137ca-47c8-44fc-9292-574f6a0af23a.png)
 
 # ADMIN CONTROL
