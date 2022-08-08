@@ -49,18 +49,21 @@ if(isset($_SESSION['tsn-login'])){
         if(isset($_POST['sendMessage'])){
             foreach ($_POST as $key => $value) {
                 if($value == ''){
-                    header("contect_us.php");
+                    // header("contect_us.php");
+                    echo "<script>window.location.href='contect_us.php';</script>";
                 }
             }
             $current_user = $_SESSION['tsn-login']['id'];
             $subject = filter_data($_POST['subject']);
             $message = filter_data($_POST['message']);
             mysqli_query($conn,"INSERT INTO `contect_us` (`user_id`,`subject`,`message`) VALUES ($current_user,'$subject','$message')");
-            header("location:../main.php?success=Thanks for connecting me, we receive the message soon..");
+            echo "<script>window.location.href='../main.php?success=Thanks for connecting me, we receive the message soon..';</script>";
+            // header("location:../main.php?success=Thanks for connecting me, we receive the message soon..");
         }
-
-}else{
-    header("location:../../../index.php?error=Unautorized user...");
+        
+    }else{
+    echo "<script>window.location.href='../../../index.php?error=Unautorized user...';</script>";
+    // header("location:../../../index.php?error=Unautorized user...");
 }
 ?>
 

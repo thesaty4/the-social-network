@@ -5,7 +5,8 @@ session_start();
         // print_r($_POST);
         // echo "</pre>";
         if($_POST['captcha-code'] != $_POST['input-captcha']){
-            header("location:../index.php?error=Error : Please input valid captcha");
+            echo "<script>window.location.href='../index.php?error=Error : Please input valid captcha';</script>";
+            // header("location:../index.php?error=Error : Please input valid captcha");
         }
         include("function.php");
         $status = validate_data($_POST);

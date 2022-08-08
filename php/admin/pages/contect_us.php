@@ -27,6 +27,8 @@ if(isset($_SESSION['tsn-login']) AND $_SESSION['tsn-login']['account_type'] == '
     </div>
 <?php
 }else{
-    header("location:../../../index.php?error=Unautorized user...");
+    echo "<script>window.location.href='../main.php?success=../../../index.php?error=Unautorized user...';</script>";
+
+    // header("location:../../../index.php?error=Unautorized user...");
 }
 ?>

@@ -160,7 +160,8 @@ echo "</div>";
         // print_r($_POST);
     }
 }else{
-    header("location:../../index.php?error=Error404 : Unautorized access..!");
+    echo "<script>window.location.href='../../index.php?error=Error404 : Unautorized access..!';</script>";
+    // header("location:../../index.php?error=Error404 : Unautorized access..!");
 }
 ?>
 </body>

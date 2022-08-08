@@ -16,15 +16,22 @@ if(isset($_SESSION['tsn-login'])){
             if(file_exists($upload_directory)){
                 unlink($upload_directory);
             }
-            header("location:../main.php?error=Profile uploading problem..");
+            echo "<script>window.location.href='../main.php?error=Profile uploading problem..';</script>";
+
+            // header("location:../main.php?error=Profile uploading problem..");
         }
         
         mysqli_query($conn,"INSERT INTO sponsor (sponsor_title,sponsor_img_location) VALUES ('$title','$upload_directory');");
-        header("location:../main.php?success=New ads created successfull...");
+        
+        echo "<script>window.location.href='../main.php?success=New ads created successfull...';</script>";
+        // header("location:../main.php?success=New ads created successfull...");
     }else{
-        header("location:../main.php?success=You can only upload jpg/jpeg/png or gif files...");
+        echo "<script>window.location.href='../main.php?success=You can only upload jpg/jpeg/png or gif files...';</script>";
+        // header("location:../main.php?success=You can only upload jpg/jpeg/png or gif files...");
     }
 }else{
-    header("location:../../../main.php?error=Unauthorized user..");
+    
+    echo "<script>window.location.href='../main.php?success=../../../main.php?error=Unauthorized user..';</script>";
+    // header("location:../../../main.php?error=Unauthorized user..");
 }
 ?>

@@ -11,7 +11,9 @@ $userId = $_SESSION['tsn-login']['id'];
 if(isset($_POST['submitReport'])){
     foreach ($_POST as $key => $value) {
         if($value == ''){
-            header("location:../main.php?report=".$userId);
+            echo "<script>window.location.href='../main.php?report=".$userId."';</script>";
+            
+            // header("location:../main.php?report=".$userId);
         }
     }
 }
@@ -20,5 +22,6 @@ $report = filter_data($_POST['report']);
 $category = filter_data($_POST['reportCategory']);
 
 mysqli_query($conn,"INSERT INTO report (user_id,report,category) VALUES ($userId,'$report','$category');");
-header("location:../main.php?success=You have successfully reported");
+echo "<script>window.location.href='../main.php?success=You have successfully reported';</script>";
+// header("location:../main.php?success=You have successfully reported");
 ?>

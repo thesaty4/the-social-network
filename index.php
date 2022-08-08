@@ -186,10 +186,12 @@ function load(){
 </html>
 <?php }else{
     if($_SESSION['tsn-login']['account_type'] == 'admin'){
-        header("location:php/admin/main.php");
+        echo "<script>window.location.href='php/admin/main.php';</script>";
+        // header("location:php/admin/main.php");
     }
     if($_SESSION['tsn-login']['account_type'] == 'user'){
-        header("location:php/user/main.php");        
+        echo "<script>window.location.href='php/user/main.php';</script>";
+        // header("location:php/user/main.php");        
     }
 }?>
 

@@ -46,8 +46,9 @@ if(isset($_POST['post'])){
                     //     mysqli_query($conn,"UPDATE notification SET num_of_notification = $num_of_notification WHERE user_id = $usrId;");
                     // }
                     // ----------------------------------------------------------------------------------------------
+                    echo "<script>window.location.href='../main.php?success=Your post has been uploaded.';</script>";
                     
-                    header("location:../main.php?success=Your post has been uploaded.");
+                    // header("location:../main.php?success=Your post has been uploaded.");
                 }else{
                     if(file_exists($upload_directory)){
                         unlink($upload_directory);
@@ -61,9 +62,11 @@ if(isset($_POST['post'])){
             }
         }
     }else{
-        header("location:../main.php?error=Warning : You can upload only jpg/jpeg/png/gif file only !");
+        echo "<script>window.location.href='../main.php?error=Warning : You can upload only jpg/jpeg/png/gif file only !';</script>";
+        // header("location:../main.php?error=Warning : You can upload only jpg/jpeg/png/gif file only !");
     }
 }else{
-    header("location:../user/main.php?error=Error404 : Unautorized access!");
+    echo "<script>window.location.href='../user/main.php?error=Error404 : Unautorized access!';</script>";
+    // header("location:../user/main.php?error=Error404 : Unautorized access!");
 }
 ?>

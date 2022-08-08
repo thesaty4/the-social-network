@@ -11,5 +11,6 @@ while($rows = mysqli_fetch_assoc($obj)){
 }
 mysqli_query($conn,"UPDATE comments SET is_seen = TRUE WHERE user_id = $uId;");
 // echo $uId;
-header("location:../main.php?notification");
+echo "<script>window.location.href='../main.php?notification';</script>";
+// header("location:../main.php?notification");
 ?>

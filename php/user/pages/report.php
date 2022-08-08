@@ -69,7 +69,9 @@ $report = filter_data($_GET['report']);
 </html>
 <?php
 }else{
-    header("location:../../../index.php?error=Unexpected user..");
+    echo "<script>window.location.href='../../../index.php?error=Unexpected user..';</script>";
+
+    // header("location:../../../index.php?error=Unexpected user..");
 }
 ?>
 <script>
