@@ -4,7 +4,8 @@ if ( isset( $_POST['signup'] ) ) {
     include( 'function.php' );
     if(isset($_SESSION['otp'])){
         if($_SESSION['otp'] != $_POST['otp']){
-            header("location:../index.php?error=Opps invalid OTP, please enter valid otp.");
+            echo "<script>window.location.href='../index.php?error=Opps invalid OTP, please enter valid otp.';</script>";
+            // header("location:../index.php?error=Opps invalid OTP, please enter valid otp.");
         }else{
             $_SESSION['otp'] = [];
         }
@@ -31,6 +32,8 @@ if ( isset( $_POST['signup'] ) ) {
         show_error( $status );
     }
 }else{
-    header("location:../index.php?error=Error : Opps This page not able to open!");
+    echo "<script>window.location.href='../index.php?error=Error : Opps This page not able to open!';</script>";
+
+    // header("location:../index.php?error=Error : Opps This page not able to open!");
 }
 ?>

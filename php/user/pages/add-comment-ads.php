@@ -7,6 +7,8 @@ if(isset($_SESSION['tsn-login'])){
     $sponsorId = filter_var($_POST['sponsor_id'],FILTER_SANITIZE_STRING);
     $comment = filter_var($_POST['comment'],FILTER_SANITIZE_STRING);
     mysqli_query($conn,"INSERT INTO sponsor_comments (user_id,sponsor_id,comment) VALUES ($userId,$sponsorId,'$comment')");
-    header("location:../main.php?Adscomment=".$sponsorId);
+    echo "<script>window.location.href='../main.php?Adscomment=".$sponsorId."';</script>";
+   
+    // header("location:../main.php?Adscomment=".$sponsorId);
 }
 ?>

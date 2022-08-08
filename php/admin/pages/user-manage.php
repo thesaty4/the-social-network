@@ -11,5 +11,7 @@ if($status == 'active'){
     $status = 'active';
 }
 $obj = mysqli_query($conn,"UPDATE users SET status = '$status' WHERE user_id = $id");
-header("location:../main.php?users");
+
+echo "<script>window.location.href='../main.php?users';</script>";
+// header("location:../main.php?users");
 ?>

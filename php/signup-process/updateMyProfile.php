@@ -6,7 +6,9 @@ $profileLocation = $_SESSION['tsn-login']['profile_location'];
 $user_id = $_SESSION['tsn-login']['id'];
 foreach ($_POST as $key => $value) {
     if($value == ''){
-        header("location:profile_update.php");
+        echo "<script>window.location.href='profile_update.php';</script>";
+        
+        // header("location:profile_update.php");
     }
 }
 function filter_data($data){
@@ -32,7 +34,9 @@ if($_FILES['myfile']['error'] == 0){
             if(file_exists($upload_directory)){
                 unlink($upload_directory);
             }
-            header("location:profile_update.php?error=Profile uploading problem..");
+            
+            echo "<script>window.location.href='profile_update.php?error=Profile uploading problem..';</script>";
+            // header("location:profile_update.php?error=Profile uploading problem..");
         }
         
         mysqli_query($conn,"UPDATE `users` SET `filename` = '$filename', `profile_location` = '$upload_directory',`fname` = '$fname', `lname` = '$lname',`gender` = '$gender',`mobile` = '$mobile',`email` = '$email' WHERE `user_id` = $user_id;");
@@ -40,16 +44,21 @@ if($_FILES['myfile']['error'] == 0){
                 unlink($profileLocation);
             }
         $_SESSION['tsn-login']['profile_location'] = $upload_directory;
-        header("location:../user/pages/profile_update.php?success=Profile Updated successfull...");
+        echo "<script>window.location.href='../user/pages/profile_update.php?success=Profile Updated successfull...';</script>";
+        // header("location:../user/pages/profile_update.php?success=Profile Updated successfull...");
     }else{
             if(file_exists($upload_directory)){
                 unlink($upload_directory);
             }
-            header("location:../user/pages/profile_update.php?error=You can Upload only jpeg/jpg/png or gif formate..");
+            
+            echo "<script>window.location.href='../user/pages/profile_update.php?error=You can Upload only jpeg/jpg/png or gif formate..';</script>";
+            // header("location:../user/pages/profile_update.php?error=You can Upload only jpeg/jpg/png or gif formate..");
     }
 }else{
 
     mysqli_query($conn,"UPDATE `users` SET `fname` = '$fname', `lname` = '$lname',`gender` = '$gender',`mobile` = '$mobile',`email` = '$email' WHERE `user_id` = $user_id;");
-    header("location:../user/pages/profile_update.php?success=Profile Updated successfull...");
+    echo "<script>window.location.href='../user/pages/profile_update.php?success=Profile Updated successfull...';</script>";
+    
+    // header("location:../user/pages/profile_update.php?success=Profile Updated successfull...");
 }
 ?>

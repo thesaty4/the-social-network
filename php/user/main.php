@@ -1,9 +1,10 @@
+<?php session_start();  ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php session_start(); echo "user-".$_SESSION['tsn-login']['fname'];?></title>
+    <title><?php echo "user-".$_SESSION['tsn-login']['fname'];?></title>
 </head>
     <link rel="stylesheet" type="text/css" href="../../icon/font-awesome/css/all.css">
     <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
@@ -294,7 +295,10 @@ if($_SESSION['tsn-login']['account_type'] == 'user'){
                     mysqli_query($conn,"INSERT INTO `chat_manage` (`user_id`,`chat_with`,`chat`) VALUES ('$current_user','$chatWithUser','$message');");
                     $chat_obj = mysqli_query($conn,"SELECT * FROM `chat_manage` WHERE `user_id` = $current_user AND `chat_with` = $chatWithUser OR `user_id` = $chatWithUser AND `chat_with` = $current_user ORDER BY `chat_id` DESC;");
                     $rows = mysqli_fetch_assoc($chat_obj);
-                    header("location:main.php?chatwith=".$chatWithUser."#eof");
+                    
+                    echo "<script>window.location.href='main.php?chatwith=".$chatWithUser."#eof';</script>";
+
+                    // header("location:main.php?chatwith=".$chatWithUser."#eof");
                 }
             ?>
         </div>
@@ -355,7 +359,9 @@ if($_SESSION['tsn-login']['account_type'] == 'user'){
 <?php
 
 }else{
-    header("location:../../index.php?error=Error404 : Unautorized access..!");
+    echo "<script>window.location.href='../../index.php?error=Error404 : Unautorized access..!';</script>";
+
+    // header("location:../../index.php?error=Error404 : Unautorized access..!");
 }
 ?>
 </body>

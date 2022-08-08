@@ -58,7 +58,9 @@ if(isset($_GET['postId'])){
 </html>
 <?php
 }else{
-    header("location:../main.php?error=Unexpected user...");
+    echo "<script>window.location.href='../main.php?error=Unexpected user...';</script>";
+
+    // header("location:../main.php?error=Unexpected user...");
 }
 
 ?>

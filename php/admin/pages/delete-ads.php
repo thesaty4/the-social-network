@@ -12,6 +12,7 @@ if(isset($_SESSION['tsn-login'])){
     mysqli_query($conn,"DELETE FROM sponsor WHERE sponsor_id = $id");
     mysqli_query($conn,"DELETE FROM sponsor_likes WHERE sponsor_id = $id");
     mysqli_query($conn,"DELETE FROM sponsor_comments WHERE sponsor_id = $id");
-    header("location:../main.php?home");
+    echo "<script>window.location.href='../main.php?success=../main.php?home';</script>";
+    // header("location:../main.php?home");
 }
 ?>

@@ -1,11 +1,13 @@
 <?php
 foreach ($_POST as $key => $value) {
     if($value == ''){
-        header("location:profile_update.php?warning=All field required");
+        echo "<script>window.location.href='profile_update.php?warning=All field required';</script>";
+        // header("location:profile_update.php?warning=All field required");
     }
 }
 if($_POST['newPass'] != $_POST['confirmPass']){
-    header("location:profile_update.php?warning=New and confirm password should be same..");
+    echo "<script>window.location.href='profile_update.php?warning=New and confirm password should be same..';</script>";
+    // header("location:profile_update.php?warning=New and confirm password should be same..");
 }
 
 function filter_data($data){
@@ -23,9 +25,12 @@ $rows = mysqli_fetch_assoc($obj);
 if(password_verify($password,$rows['password'])){
     $pwd = password_hash($newPass,PASSWORD_DEFAULT);
     mysqli_query($conn,"UPDATE `users` SET `password` = '$pwd' WHERE `user_id` = $uId;");
-    header("location:profile_update.php?success=Password Changing successfull...");
+    echo "<script>window.location.href='profile_update.php?success=Password Changing successfull...';</script>";
+    
+    // header("location:profile_update.php?success=Password Changing successfull...");
 }else{ 
     // echo "did't match";
-    header("location:profile_update.php?error=Old password does't match please try again...");
+    echo "<script>window.location.href='profile_update.php?error=Old password does't match please try again...';</script>";
+    // header("location:profile_update.php?error=Old password does't match please try again...");
 }
 ?>

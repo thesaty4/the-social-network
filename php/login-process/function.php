@@ -29,14 +29,16 @@ function show_error($arg){
         'invalid_email'  => 'Invalid email, please enter valid email!',
         'account_deactive'  => 'Opps! This account Deactivated'
     ];
-    header("location:../../index.php?warning=".$error[$arg]);
+    // header("location:../../index.php?warning=".$error[$arg]);
+    echo "<script>window.location.href='../../index.php?warning=".$error[$arg]."';</script>";
 }
 
 function show_success($arg){
     $success = [
         
     ];
-    header("location:../../index.php?warning=".$success[$arg]);
+    echo "<script>window.location.href='../../index.php?warning=".$success[$arg]."';</script>";
+    // header("location:../../index.php?warning=".$success[$arg]);
 }
 
 
@@ -44,10 +46,12 @@ function show_success($arg){
 // final log in page
 function log_page($arg){
     if($arg['account_type'] === 'admin'){
-        header("location:../admin/main.php");
+        echo "<script>window.location.href='../admin/main.php';</script>";
+        // header("location:../admin/main.php");
     }
     if($arg['account_type'] === 'user'){
-        header("location:../user/main.php");
+        echo "<script>window.location.href='../user/main.php';</script>";
+        // header("location:../user/main.php");
     }
 }
 ?>

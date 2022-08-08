@@ -11,6 +11,8 @@ if(isset($_SESSION['tsn-login'])){
     }else{
         mysqli_query($conn,"DELETE FROM sponsor_likes WHERE user_id = $cUser AND sponsor_id = $sponsorId");
     }
-    header("location:../main.php?home");
+    echo "<script>window.location.href='../main.php?home';</script>";
+
+    // header("location:../main.php?home");
 }
 ?>
